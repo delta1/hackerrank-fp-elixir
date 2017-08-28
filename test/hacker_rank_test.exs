@@ -42,4 +42,18 @@ defmodule HackerRankTest do
     assert actual == expected
   end
 
+  test "it filters positions in a list" do
+    input = [2, 5, 3, 4, 6, 7, 9, 8]
+    expected = [5, 4, 7, 8]
+    actual = filter_positions_in_list(input)
+    assert actual == expected
+  end
+
+  test "it creates an array of N integers" do
+    input = [4]
+    expected_length = 4
+    actual = array_of_n_elements(input)
+    assert length(actual) == expected_length
+  end
+
 end

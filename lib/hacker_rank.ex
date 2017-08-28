@@ -51,4 +51,14 @@ defmodule HackerRank do
     [max|values] = enum
     values |> filter(fn x -> x < max end)
   end
+
+  def filter_positions_in_list(enum) do
+    enum |> Enum.drop_every(2)
+  end
+
+  def array_of_n_elements(enum) do
+    #need to use IO.inspect(list, limit: :infinity) for output
+    [n] = enum
+    Enum.take(1..n, n)
+  end
 end
