@@ -92,4 +92,36 @@ defmodule HackerRank do
     Enum.reduce(0..9, 0, fn (i, acc) -> acc + :math.pow(x, i) / factorial(i) end)
       |> Float.round(4)
   end
+
+  def area_under_curve(a, b, l, r) do
+    zipped = Enum.zip(a, b)
+    y = fn x ->
+      zipped
+      |> Enum.map(fn {co, exp} -> co * :math.pow(x, exp) end)
+      |> Enum.sum
+    end
+    dx = 0.001
+    n = trunc((r - l) / dx) + 1
+    0..n-1
+      |> Enum.map(fn x -> y.(l + x * dx) * dx end)
+      |> Enum.sum
+      |> Float.round(1)
+  end
+
+  def volume_of_revolution(a, b, l, r) do
+    zipped = Enum.zip(a, b)
+    y = fn x ->
+      zipped
+      |> Enum.map(fn {co, exp} -> co * :math.pow(x, exp) end)
+      |> Enum.sum
+    end
+    dx = 0.001
+    n = trunc((r - l) / dx) + 1
+    pi = :math.pi
+    0..n-1
+      |> Enum.map(fn x -> pi * :math.pow(y.(l + x * dx), 2) * dx end)
+      |> Enum.sum
+      |> Float.round(1)
+  end
+
 end

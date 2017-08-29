@@ -100,4 +100,24 @@ defmodule HackerRankTest do
     assert actual == expected
   end
 
+  test "it calculates the area under the curve" do
+    a = [1, 2, 3, 4, 5]
+    b = [6, 7, 8, 9, 10]
+    l = 1
+    r = 4
+    expected = 2435300.3
+    actual = area_under_curve(a, b, l, r)
+    assert actual == expected
+  end
+
+  test "it calculates the volume of the revolution about x-axis" do
+    a = [1, 2, 3, 4, 5]
+    b = [6, 7, 8, 9, 10]
+    l = 1
+    r = 4
+    expected = 26172951168940.8
+    actual = volume_of_revolution(a, b, l, r)
+    assert actual == expected
+  end
+
 end
