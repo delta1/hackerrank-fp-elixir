@@ -1,8 +1,8 @@
 # HackerRank - Functional Programming Track - Elixir
 
-Learning Elixir and TDD on the Functional Programming track on HackerRank[1]
+Learning Elixir and TDD on the Functional Programming track on HackerRank
 
-[1] https://www.hackerrank.com/domains/fp/intro
+https://www.hackerrank.com/domains/fp/intro
 
 ```mix test --trace```
 
