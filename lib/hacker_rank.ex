@@ -61,4 +61,35 @@ defmodule HackerRank do
     [n] = enum
     Enum.take(1..n, n)
   end
+
+  def reverse_a_list(enum) do
+    #Enum.reverse(enum)
+    Enum.reduce(enum, [], fn(x, acc) -> [x|acc] end)
+  end
+
+  def sum_of_odd_integers(enum) do
+    require Integer
+    enum
+      |> Enum.filter(fn x -> Integer.is_odd(x) end)
+      |> Enum.sum
+  end
+
+  def list_length(enum) do
+    #length(enum)
+    Enum.reduce(enum, 0, fn(_, acc) -> acc + 1 end)
+  end
+
+  def update_list(enum) do
+    Enum.map(enum, &abs/1)
+  end
+
+  def factorial(0), do: 1
+  def factorial(n) when n > 0 do
+    Enum.reduce(1..n, 1, fn (x, acc) -> acc * x end)
+  end
+
+  def evaluate_e_x(x) do
+    Enum.reduce(0..9, 0, fn (i, acc) -> acc + :math.pow(x, i) / factorial(i) end)
+      |> Float.round(4)
+  end
 end
