@@ -1,7 +1,7 @@
-defmodule HackerRankTest do
+defmodule HackerRankTest.Introduction do
   use ExUnit.Case
-  import HackerRank
-  doctest HackerRank
+  import HackerRank.Introduction
+  doctest HackerRank.Introduction
 
   test "it inputs numbers" do
     stream = File.stream!("./test/input_numbers_test.txt")

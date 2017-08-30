@@ -1,4 +1,4 @@
-defmodule HackerRank do
+defmodule HackerRank.Introduction do
   @moduledoc """
   Documentation for HackerRank.
   """
@@ -8,8 +8,9 @@ defmodule HackerRank do
 
   ## Examples
 
+      iex> import HackerRank.Introduction
       iex> f = File.stream!("./test/input_numbers_test.txt")
-      iex> HackerRank.input_numbers(f)
+      iex> input_numbers(f)
       [10, 20, 30, 40, 50]
 
   """
