@@ -36,4 +36,11 @@ defmodule HackerRankTest.Recursion do
     assert actual == expected
   end
 
+  test "it compresses the string" do
+    input = "aaabaaaaccaaaaba"
+    expected = "a3ba4c2a4ba"
+    actual = compress_string(input)
+    assert actual == expected
+  end
+
 end
