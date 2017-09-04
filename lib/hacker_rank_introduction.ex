@@ -125,4 +125,33 @@ defmodule HackerRank.Introduction do
       |> Float.round(1)
   end
 
+  def valid_function(enum) do
+    map = Enum.reduce(enum, %{ valid: true }, fn ([x, y], acc) ->
+      if Map.has_key?(acc, x) do
+        if Map.get(acc, x) != y do
+          Map.put(acc, :valid, false)
+        end
+      else
+        Map.put(acc, x, y)
+      end
+    end)
+    map.valid
+  end
+
+  def distance(p1, p2) do
+    [x1, y1] = p1
+    [x2, y2] = p2
+    :math.sqrt(:math.pow(x2 - x1, 2) + :math.pow(y2 - y1, 2))
+  end
+
+  def polygon_perimeter(enum) do
+    [first|_] = enum
+    #last = Enum.at(enum, length(enum) - 1)
+    [last|_] = Enum.reverse(enum)
+    Enum.reduce(enum, %{current: first, perimeter: distance(last, first)}, fn point, acc ->
+      perimeter = acc.perimeter + distance(acc.current, point)
+      %{current: point, perimeter: perimeter}
+    end).perimeter
+  end
+
 end

@@ -120,4 +120,30 @@ defmodule HackerRankTest.Introduction do
     assert actual == expected
   end
 
+  test "it returns true/false if an array of x,y pairs would be a valid function" do
+    input = [[1, 1], [2, 2],  [3, 3]]
+    expected = true
+    actual = valid_function(input)
+    assert actual == expected
+    input = [[1, 1], [2, 2], [3, 3], [2, 3]]
+    expected = false
+    actual = valid_function(input)
+    assert actual == expected
+  end
+
+  test "it computes distance between two x,y points" do
+    p1 = [0, 0]
+    p2 = [3, 4]
+    expected = 5.0
+    actual = distance(p1, p2)
+    assert actual == expected
+  end
+
+  test "it computes the perimeter of a polygon" do
+    input = [[0, 0], [0, 1], [1, 1], [1, 0]]
+    expected = 4.0
+    actual = polygon_perimeter(input)
+    assert actual == expected
+  end
+
 end
